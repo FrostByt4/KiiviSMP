@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>KiiviSMP - Server Team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if bg.type == 'video' %}
+        <video autoplay muted loop id="bg-video"><source src="{{ url_for('static', filename=bg.filename) }}" type="video/mp4"></video>
+    {% else %}
+        <audio autoplay loop id="bg-audio"><source src="{{ url_for('static', filename=bg.filename) }}" type="audio/mpeg"></audio>
+    {% endif %}
+
+    <header class="navbar">
+        <div class="logo"><a href="/" style="text-decoration:none;"><span class="logo-kiivi">KIIVI</span><span class="logo-smp">SMP</span></a></div>
+        <nav class="nav-links">
+            <a href="/about">Über Uns</a>
+            <a href="/plugins">Custom Plugins</a>
+            <a href="/team" style="color: #f39c12;">Server Team</a>
+            <a href="/">Zur Startseite</a>
+        </nav>
+    </header>
+
+    <div class="subpage-container" id="ServerTeam">
+        <h2 class="subpage-title">DAS SERVER TEAM</h2>
+        <p class="sub-subtitle">Die Köpfe hinter KiiviSMP</p>
+
+        <div class="team-grid">
+            <!-- Teammitglied 1: DrKiivi -->
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='teamler1.png') }}" alt="DrKiivi" class="team-avatar">
+                <h3>DrKiivi (Drkivii)</h3>
+                <span class="team-role">Owner & Developer</span>
+                <p>Gründer und Hauptentwickler. Kümmert sich um Plugins, Performance und die Server-Infrastruktur.</p>
+            </div>
+
+            <!-- Teammitglied 2 (Beispiel: teamler2.png im static Ordner ablegen) -->
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='teamler2.png') }}" alt="Teamler 2" class="team-avatar">
+                <h3>[Name 2]</h3>
+                <span class="team-role">Admin</span>
+                <p>Verwaltet das Team, kümmert sich um Events und moderiert die Community.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

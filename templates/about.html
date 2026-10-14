@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>KiiviSMP - Über Uns</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if bg.type == 'video' %}
+        <video autoplay muted loop id="bg-video"><source src="{{ url_for('static', filename=bg.filename) }}" type="video/mp4"></video>
+    {% else %}
+        <audio autoplay loop id="bg-audio"><source src="{{ url_for('static', filename=bg.filename) }}" type="audio/mpeg"></audio>
+    {% endif %}
+
+    <header class="navbar">
+        <div class="logo"><a href="/" style="text-decoration:none;"><span class="logo-kiivi">KIIVI</span><span class="logo-smp">SMP</span></a></div>
+        <nav class="nav-links">
+            <a href="/about" style="color: #f39c12;">Über Uns</a>
+            <a href="/plugins">Custom Plugins</a>
+            <a href="/team">Server Team</a>
+            <a href="/">Zur Startseite</a>
+        </nav>
+    </header>
+
+    <div class="subpage-container">
+        <h2 class="subpage-title">ÜBER KIIVISMP</h2>
+        <div class="content-box">
+            <p>KiiviSMP ist ein einzigartiges Minecraft Survival-Multiplayer-Projekt, das von Spielern für Spieler entwickelt wurde. Unser Ziel ist es, eine entspannte, aber spannende Atmosphäre zu bieten, in der man gemeinsam bauen, handeln und Abenteuer erleben kann.</p>
+            <br>
+            <p>Mit maßgeschneiderten Plugins, einer freundlichen Community und regelmäßigen Events heben wir uns von Standard-Servern ab.</p>
+        </div>
+    </div>
+</body>
+</html>

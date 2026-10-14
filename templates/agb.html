@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>KiiviSMP - AGB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if bg.type == 'video' %}
+        <video autoplay muted loop id="bg-video"><source src="{{ url_for('static', filename=bg.filename) }}" type="video/mp4"></video>
+    {% else %}
+        <audio autoplay loop id="bg-audio"><source src="{{ url_for('static', filename=bg.filename) }}" type="audio/mpeg"></audio>
+    {% endif %}
+
+    <header class="navbar">
+        <div class="logo"><a href="/" style="text-decoration:none;"><span class="logo-kiivi">KIIVI</span><span class="logo-smp">SMP</span></a></div>
+        <nav class="nav-links"><a href="/">Zur Startseite</a></nav>
+    </header>
+
+    <div class="subpage-container">
+        <h2 class="subpage-title">ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)</h2>
+        <div class="content-box">
+            <p>Mit dem Betreten des KiiviSMP Minecraft-Servers oder des dazugehoerigen Discord-Servers erkennst du alle geltenden Regeln vollstaendig an. Die verbindlichen Server- und Chatregeln sind stets auf dem Discord-Server einsehbar und muessen von jedem Mitglied strikt eingehalten werden. Wer gegen diese Bestimmungen verstosst, riskiert einen sofortigen und dauerhaften Ausschluss von dem gesamten Projekt. Die Serverleitung besitzt zu jeder Zeit das vollstaendige Hausrecht und kann eigenstaendig ueber Sanktionen entscheiden. Mit deiner Teilnahme sorgst du aktiv für ein faires und respektvolles Miteinander in der Community.</p>
+        </div>
+    </div>
+</body>
+</html>

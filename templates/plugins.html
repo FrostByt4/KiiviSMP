@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>KiiviSMP - Custom Plugins</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if bg.type == 'video' %}
+        <video autoplay muted loop id="bg-video"><source src="{{ url_for('static', filename=bg.filename) }}" type="video/mp4"></video>
+    {% else %}
+        <audio autoplay loop id="bg-audio"><source src="{{ url_for('static', filename=bg.filename) }}" type="audio/mpeg"></audio>
+    {% endif %}
+
+    <header class="navbar">
+        <div class="logo"><a href="/" style="text-decoration:none;"><span class="logo-kiivi">KIIVI</span><span class="logo-smp">SMP</span></a></div>
+        <nav class="nav-links">
+            <a href="/about">Über Uns</a>
+            <a href="/plugins" style="color: #f39c12;">Custom Plugins</a>
+            <a href="/team">Server Team</a>
+            <a href="/">Zur Startseite</a>
+        </nav>
+    </header>
+
+    <div class="subpage-container">
+        <h2 class="subpage-title">CUSTOM PLUGINS</h2>
+        <div class="content-box">
+            <p>Unsere Plugins werden direkt von DrKiivi selbst programmiert, um perfekt auf unser Gameplay abgestimmt zu sein.</p>
+            <br>
+            <ul style="list-style: square; padding-left: 20px;">
+                <li><b>Custom Menüs:</b> Intuitives Interface für alle wichtigen Befehle.</li>
+                <li><b>Wirtschaftssystem:</b> Handeln, Shops und Spieler-Marktplätze.</li>
+                <li><b>Exklusive Events:</b> Automatisch generierte Boss-Fights und Quests.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

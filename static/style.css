@@ -1,0 +1,352 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraft.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Minecraft', monospace;
+}
+
+body {
+    background-color: #0d0907;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -999;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: rgba(25, 17, 13, 0.92);
+    border-bottom: 4px solid #4a3528;
+    backdrop-filter: blur(6px);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8), 2px 2px 0px #3a0000;
+    letter-spacing: 1px;
+}
+
+.logo-kiivi {
+    color: #ff3333;
+}
+
+.logo-smp {
+    color: #ffffff;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8), 2px 2px 0px #222222;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content.img-dropdown {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.coming-soon-img {
+    display: block;
+    max-width: 240px;
+    height: auto;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.8));
+}
+
+.auth-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-discord {
+    background-color: #5865F2;
+    color: white;
+    padding: 14px 24px;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.btn-discord:hover {
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px 70px;
+    min-height: 85vh;
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 800px;
+}
+
+/* Skin Bild über dem Badge */
+.top-skin-container {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 15px;
+}
+
+.top-skin-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
+}
+
+.badge-hero {
+    background-color: rgba(243, 156, 18, 0.3);
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    padding: 8px 18px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+}
+
+.hero-left h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.25;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.95);
+}
+
+.hero-left p {
+    color: #f0e6df;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.95);
+}
+
+/* Transparente Countdown- & Status-Box */
+.transparent-box {
+    background: rgba(25, 17, 13, 0.92) !important;
+    border: 3px solid #4a3528;
+    padding: 25px 30px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+}
+
+.countdown-row {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.countdown-item h3 {
+    font-size: 28px;
+    color: #f39c12;
+    margin-bottom: 5px;
+}
+
+.countdown-item span {
+    font-size: 12px;
+    color: #dcd0c6;
+}
+
+.countdown-text {
+    font-size: 13px;
+    color: #dcd0c6;
+    margin-left: auto;
+    border-left: 3px solid #4a3528;
+    padding-left: 20px;
+}
+
+/* Status-Bereich unter dem Counter */
+.counter-status-section {
+    border-top: 2px solid #4a3528;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.status-dot.online {
+    width: 12px;
+    height: 12px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #2ecc71;
+}
+
+.status-dot.offline {
+    width: 12px;
+    height: 12px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #e74c3c;
+}
+
+.status-title {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.status-players {
+    color: #dcd0c6;
+}
+
+.ip-copy-box {
+    background: rgba(15, 10, 8, 0.9);
+    border: 2px solid #4a3528;
+    padding: 10px 16px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.ip-copy-box span {
+    font-size: 14px;
+    color: #fff;
+}
+
+.btn-copy {
+    background: #4a3528;
+    color: #f39c12;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* FOOTER */
+.footer-columns.single-footer {
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    background-color: rgba(12, 8, 6, 0.98);
+    border-top: 4px solid #4a3528;
+    margin-top: 30vh;
+    text-align: center;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    color: #a8998c;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #f39c12;
+}
+
+/* UNTERSEITEN */
+.subpage-container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.subpage-title {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.95);
+}
+
+.content-box {
+    background-color: rgba(25, 17, 13, 0.92);
+    border: 3px solid #4a3528;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.8;
+    backdrop-filter: blur(6px);
+}
